@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -37,24 +38,15 @@ public class CustomerControllerTest {
     private static final String SECRET = "";
     @Autowired
     private WebApplicationContext context;
+    @Autowired
     private ObjectMapper mapper;
+    @Autowired
     MockMvc mockMvc;
-
-    @BeforeEach
-    void setup(){
-        mapper = new ObjectMapper();
-        mockMvc = MockMvcBuilders.webAppContextSetup(context)
-                //.apply(springSecurity())
-                .build();
-    }
-
 
     @Test
     void givenCreateCustomerRequest_whenCreateCustomerWithoutUser_thenReturnCustomerDto() throws Exception {
         //given
         CreateCustomerRequest customerRequest = CustomerTestDatabase.createCustomerRequestWithNoAccount;
-        Customer customer = CustomerTestDatabase.customerWithNoAccount;
-        CustomerDto customerDto = CustomerTestDatabase.customerDtoWithNoAccount;
 
         Map<String,String> headersMap = new HashMap<>();
         headersMap.put("Authorization", SECRET);

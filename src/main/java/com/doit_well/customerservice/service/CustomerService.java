@@ -8,8 +8,8 @@ import com.doit_well.customerservice.entity.Users;
 import com.doit_well.customerservice.exception.CustomerException;
 import com.doit_well.customerservice.exception.UsersException;
 import com.doit_well.customerservice.mapper.CustomerMapper;
-import com.doit_well.customerservice.repository.ICustomerRepository;
-import com.doit_well.customerservice.repository.IUserRepository;
+import com.doit_well.customerservice.repository.CustomerRepository;
+import com.doit_well.customerservice.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CustomerService implements ICustomerService {
 
-    private ICustomerRepository customerRepository;
-    private IUserRepository userRepository;
+    private CustomerRepository customerRepository;
+    private UserRepository userRepository;
     private CustomerMapper customerMapper;
 
 

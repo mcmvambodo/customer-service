@@ -5,24 +5,23 @@ import com.doit_well.customerservice.dtos.CustomerDto;
 import com.doit_well.customerservice.entity.CreateCustomerRequest;
 import com.doit_well.customerservice.entity.Customer;
 import com.doit_well.customerservice.mapper.CustomerMapper;
-import com.doit_well.customerservice.repository.ICustomerRepository;
+import com.doit_well.customerservice.repository.CustomerRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+
 @ActiveProfiles("test")
 public class CustomerServiceTest {
 
     @InjectMocks
     private CustomerService customerService;
     @Mock
-    private ICustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
     @Mock
     private CustomerMapper customerMapper;
 

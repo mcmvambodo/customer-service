@@ -5,6 +5,7 @@ import com.doit_well.customerservice.entity.CreateCustomerRequest;
 import com.doit_well.customerservice.entity.UpdateCustomerRequest;
 import com.doit_well.customerservice.helper.Common;
 import com.doit_well.customerservice.service.CustomerService;
+import com.doit_well.customerservice.service.ICustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class CustomerController {
 
-    private CustomerService customerService;
+    private ICustomerService customerService;
 
     @PostMapping
     public ResponseEntity<CustomerDto> createCustomer(@RequestBody CreateCustomerRequest request){
