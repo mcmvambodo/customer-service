@@ -20,8 +20,8 @@ phases:
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
-      - echo pushing docker image to AWWS ECR completed on `date`
-      - pushing to repository...
+      - echo pushing docker image to AWS ECR completed on `date`
+      - echo pushing to repository...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo setting container name...
